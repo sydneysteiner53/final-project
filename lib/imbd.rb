@@ -16,6 +16,10 @@ class Scraper
 
         imdb_romance = open("http://www.imdb.com/genre/romance/?ref_=gnr_mn_ro_mp")
         @romance = Nokogiri::HTML(imdb_romance)
+
+        #feeling lazy
+        imdb_sport = open("http://www.imdb.com/genre/sport/?ref_=gnr_mn_sp_mp")
+        @sport = Nokogiri::HTML(imdb_sport)
     end
 
     def comedy_titles
@@ -52,6 +56,14 @@ class Scraper
         romance_title
     end 
 
+    def sport_titles
+        sport_title = []
+        @sport.css(".title").each do |sport_movie_title|
+            sport_title << sport_movie_title.children.children.first.text
+        end
+        sport_title
+    end
+
  
   def comedy_pictures
          comedy_picture = []
@@ -83,6 +95,14 @@ def romance_pictures
             romance_picture << movie_picture.css("a img")
         end
         action_picture
+    end
+
+def sport_pictures
+         sport_picture = []
+        @sport.css(".image").each do |movie_picture|
+            sport_picture << movie_picture.css("a img")
+        end
+        sport_picture
     end
 
 end
