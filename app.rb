@@ -31,7 +31,6 @@ class MyApp < Sinatra::Base
   	@titles = @scraper.action_titles
   	@pictures = @scraper.action_pictures
   	erb :comedy
-
   end
 
 end
