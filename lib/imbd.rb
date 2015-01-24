@@ -53,7 +53,7 @@ class Scraper
     end 
 
  
-  def comedy_pictures
+    def comedy_pictures
          comedy_picture = []
         @comedy.css(".image").each do |movie_picture|
             comedy_picture << movie_picture.css("a img")
@@ -61,7 +61,7 @@ class Scraper
         comedy_picture
     end
 
-def horror_pictures
+    def horror_pictures
          horror_picture = []
         @horror.css(".image").each do |movie_picture|
             horror_picture << movie_picture.css("a img")
@@ -69,7 +69,7 @@ def horror_pictures
         horror_picture
     end
 
-  def action_pictures
+    def action_pictures
          action_picture = []
         @action.css(".image").each do |movie_picture|
             action_picture << movie_picture.css("a img")
@@ -77,17 +77,17 @@ def horror_pictures
         action_picture
     end
 
-def romance_pictures
+    def romance_pictures
          romance_picture = []
         @romance.css(".image").each do |movie_picture|
             romance_picture << movie_picture.css("a img")
         end
-        action_picture
+        romance_picture
     end
 
 end
 newscrape = Scraper.new
-puts newscrape.comedy_titles
+puts newscrape.romance_pictures
 
 
 
