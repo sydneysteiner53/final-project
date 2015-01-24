@@ -19,4 +19,18 @@ class MyApp < Sinatra::Base
   	erb :comedy
   end
 
+  get '/sport' do
+  	@scraper = Scraper.new
+  	@titles = @scraper.sport_titles
+  	@pictures = @scraper.sport_pictures
+  	erb :comedy
+
+	get '/action' do
+  	@scraper = Scraper.new
+  	@titles = @scraper.action_titles
+  	@pictures = @scraper.action_pictures
+  	erb :comedy
+
+  end
+
 end
