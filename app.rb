@@ -30,7 +30,7 @@ class MyApp < Sinatra::Base
   	erb :comedy
   end
 
-	get '/action' do
+  get '/action' do
   	@scraper = Scraper.new
   	@titles = @scraper.action_titles
   	@pictures = @scraper.action_pictures
