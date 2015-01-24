@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Moodvie.com</title>
+	</head>
+	<body>
+		<h1> In the mood for a movie?</h1>
+		<h2> How about Moodvie?</h2>
+		<% @titles.each do |title| %>
+			<p><%= title %></p>
+		<% end %>
+		<% @pictures.each do |picture| %>
+			<img src=<%= picture %>></img>
+		<% end %>
+	</body>
+</html>
