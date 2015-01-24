@@ -16,22 +16,45 @@ class Scraper
     end
 
     def comedy_titles
-        title = []
-        @comedy.css(".title").each do |movie_title|
-            title << movie_title.children.children.first.text
+        comedy_title = []
+        @comedy.css(".title").each do |comedy_movie_title|
+            comedy_title << movie_title.children.children.first.text
         end
-        title
+        comedy_title
     end
+
+    def horror_titles
+        horror_title = []
+        @horror.css(".title").each do |horror_movie_title|
+            horror_title << movie_title.children.children.first.text
+        end
+        horror_title
+    end
+
+    def action_titles
+        action_title = []
+        @action.css(".title").each do |action_movie_title|
+            action_title << movie_title.children.children.first.text
+        end
+        action_title
+    end
+
 
     def horror_pictures
-         picture = []
+         horror_picture = []
         @horror.css(".image").each do |movie_picture|
-            picture << movie_picture.css("a img")
+            horror_picture << movie_picture.css("a img")
         end
-        picture
+        horror_picture
     end
 
+
+
 end
+newscrape = Scraper.new
+puts newscrape.horror_pictures
+
+
 
 
 
