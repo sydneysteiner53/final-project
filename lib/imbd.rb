@@ -2,36 +2,40 @@
   require 'open-uri'
   require 'pry'
 
+class Scraper
 
-html = open("http://www.imdb.com/genre/comedy/?ref_=gnr_mn_co_mp")
-
-
-  comedy = Nokogiri::HTML(html)
+    def initialize
+    comedy_html = open("http://www.imdb.com/genre/comedy/?ref_=gnr_mn_co_mp")
+    @comedy = Nokogiri::HTML(comedy_html)
    
+    imdb_horror = open("http://www.imdb.com/genre/horror")
+    @horror = Nokogiri::HTML(imdb_horror)
 
-title = []
-    comedy.css(".title").each do |movie_title|
-        title << movie_title.children.children.first.text
-
+    imdb_action = open("http://www.imdb.com/genre/action")
+    @action = Nokogiri::HTML(imdb_action)
     end
-puts title
-imdb_action = open("http://www.imdb.com/genre/action")
 
-action = Nokogiri::HTML(imdb_action)
+    def comedy_titles
+        title = []
+        @comedy.css(".title").each do |movie_title|
+            title << movie_title.children.children.first.text
+        end
+        title
+    end
 
-action.css(".article")
-
-imdb_horror = open("http://www.imdb.com/genre/horror")
-
-horror = Nokogiri::HTML(imdb_horror)
-
-horror.css(".article")
-
-picture = []
-    horror.css(".image").each do |movie_picture|
+    def horror_picures
+        picture = []
+    @horror.css(".image").each do |movie_picture|
         picture << movie_picture.css("a img")
+    end
+     picture
+    end
 
- end
- puts picture
+puts title
+
+# action.css(".article")
+# horror.css(".article")
+
+
 
 
