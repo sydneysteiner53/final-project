@@ -24,8 +24,9 @@ class MyApp < Sinatra::Base
   	@titles = @scraper.sport_titles
   	@pictures = @scraper.sport_pictures
   	erb :comedy
+  end
 
-	get '/action' do
+  get '/action' do
   	@scraper = Scraper.new
   	@titles = @scraper.action_titles
   	@pictures = @scraper.action_pictures
