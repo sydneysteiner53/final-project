@@ -106,10 +106,3 @@ def sport_pictures
     end
 
 end
-newscrape = Scraper.new
-puts newscrape.comedy_titles
-
-
-
-
-
