@@ -12,6 +12,7 @@ class MyApp < Sinatra::Base
 
   get '/comedy' do
   	@titles = @scraper.comedy_titles
+  	erb :comedy
   end
 
 end
