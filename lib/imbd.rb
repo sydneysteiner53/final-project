@@ -3,18 +3,18 @@
   require 'pry'
 
 
-imdb_html = open("http://www.imdb.com/genre/comedy/?ref_=gnr_mn_co_mp")
+html = open("http://www.imdb.com/genre/comedy/?ref_=gnr_mn_co_mp")
 
 
   comedy = Nokogiri::HTML(html)
    
 
+title = []
+    comedy.css(".title").each do |movie_title|
+        title << movie_title.children.children.first.text
 
-  comedy.css(".title").each do |movie_title|
- #   movie_title.children.children.first.text
- puts movie_title
-  end
-
+    end
+puts title
 imdb_action = open("http://www.imdb.com/genre/action")
 
 action = Nokogiri::HTML(imdb_action)
@@ -29,6 +29,7 @@ horror.css(".article")
 
 
  comedy.css(".image").each do |movie|
-   movie.comedy.css(".image").children[1].attributes["href"].value
+ puts movie.children[1].attributes["href"].value
  end
+
 
