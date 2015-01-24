@@ -27,9 +27,11 @@ horror = Nokogiri::HTML(imdb_horror)
 
 horror.css(".article")
 
+picture = []
+    horror.css(".image").each do |movie_picture|
+        picture << movie_picture.css("a img")
 
- comedy.css(".image").each do |movie|
- puts movie.children[1].attributes["href"].value
  end
+ puts picture
 
 
