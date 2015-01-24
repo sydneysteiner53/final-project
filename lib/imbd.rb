@@ -68,7 +68,7 @@ class Scraper
     def comedy_pictures
          comedy_picture = []
         @comedy.css(".image").each do |movie_picture|
-            comedy_picture << movie_picture.css("a img")
+            comedy_picture << movie_picture.css("a img")[0].attributes["src"]
         end
         comedy_picture
     end
@@ -76,7 +76,7 @@ class Scraper
     def horror_pictures
          horror_picture = []
         @horror.css(".image").each do |movie_picture|
-            horror_picture << movie_picture.css("a img")
+            horror_picture << movie_picture.css("a img")[0].attributes["src"]
         end
         horror_picture
     end
@@ -84,7 +84,7 @@ class Scraper
     def action_pictures
          action_picture = []
         @action.css(".image").each do |movie_picture|
-            action_picture << movie_picture.css("a img")
+            action_picture << movie_picture.css("a img")[0].attributes["src"]
         end
         action_picture
     end
@@ -92,23 +92,24 @@ class Scraper
     def romance_pictures
          romance_picture = []
         @romance.css(".image").each do |movie_picture|
-            romance_picture << movie_picture.css("a img")
+            romance_picture << movie_picture.css("a img")[0].attributes["src"]
         end
         romance_picture
     end
 
-def sport_pictures
+    def sport_pictures
          sport_picture = []
         @sport.css(".image").each do |movie_picture|
-            sport_picture << movie_picture.css("a img")
+            sport_picture << movie_picture.css("a img")[0].attributes["src"]
         end
         sport_picture
     end
 
 end
 newscrape = Scraper.new
-puts newscrape.romance_pictures
-
+# puts newscrape.sport_pictures
+# puts newscrape.sport_titles
+puts newscrape.sport_pictures
 
 
 
