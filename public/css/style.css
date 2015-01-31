@@ -1,19 +1,26 @@
+
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two);
+
 h1 {
-	color: navy;
+	color: white;
 	font-size: 40px;
 	text-align: center;
+	font-family: 'Shadows Into Light Two', cursive;
 }
 
 h2 {
-	color: turquoise;
+	color: white;
 	font-size: 30px;
 	text-align: center;
+	font-family: 'Shadows Into Light Two', cursive;
 }
 
 body {
-	color: blue;
+	color: white;
 	font font-size: 24px;
 	text-align: center;
-	background-color: 
-}
+	background-image: url("http://media.giphy.com/media/capVWro9Ytyhy/giphy.gif");
+	background-size: 100%;
+    background-repeat: no-repeat;
+	}
 
