@@ -21,6 +21,10 @@ body {
 	text-align: center;
 	background-image: url("http://media.giphy.com/media/capVWro9Ytyhy/giphy.gif");
 	background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 	}
 
+img {
+
+	float: bottom; left;
+}
